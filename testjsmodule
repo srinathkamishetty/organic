@@ -27,14 +27,12 @@ if ($form_id=='taxonomy_form_term')
      $form['search_something'] = array(
       '#type' => 'button',
       '#value' => t('Search'),
-      '#attributes' => array('onclick' => searchsomething()));
-
-function searchsomething(){
-  alert("hello");
+      '#attributes' => array('onclick' => 'searchsomething()'));
 
 
-     }
-     
+
+
+
           }
 
  // drupal_set_message($form_id); /*To print form id*/
@@ -44,4 +42,7 @@ function searchsomething(){
   }
       }
 
-
+function searchsomething(){
+  alert("hello");
+  
+}
