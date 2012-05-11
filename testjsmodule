@@ -1,0 +1,47 @@
+<?php
+function mymodule_form_alter(&$form, &$form_state, $form_id) {
+
+if ($form_id=='taxonomy_form_term')
+ {
+
+     /*  if (isset($form['#term']['tid']))
+          {
+            $form['testuid'] = array(
+            '#type' => 'textfield', // text field for uuid
+            '#title' => 'UUID',     //title
+            '#value' =>$form['#term']['uuid'],         // the uuid it self
+            '#disabled' => 'FALSE', //disabled to edit
+              );
+
+             } */
+
+
+     if (isset($form['#term']['tid'])){
+
+           $form['testuid'] = array(
+            '#type' => 'item', // text field for uuid
+            '#title' => 'UUID',     //title
+            '#description' =>$form['#term']['uuid'],// the uuid itself
+              );
+
+     $form['search_something'] = array(
+      '#type' => 'button',
+      '#value' => t('Search'),
+      '#attributes' => array('onclick' => searchsomething()));
+
+function searchsomething(){
+  alert("hello");
+
+
+     }
+     
+          }
+
+ // drupal_set_message($form_id); /*To print form id*/
+
+ // drupal_set_message($p); /*To print taxonomy terms uuid*/
+
+  }
+      }
+
+
